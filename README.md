@@ -2,5 +2,5 @@
 This is for the assignment practical part
 
 Tools Being used\
-FRONTEND: Html and CSS\
+FRONTEND: Html and CSS and Javascript\
 BACKEND: Javascript, implementing databases through Node.js
