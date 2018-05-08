@@ -83,8 +83,14 @@ if($conn->query($sql) === TRUE){
 else {
 	echo "Error creating table: " . $conn->error;
 }
-
-
-
+//creating a placeholder user
+$sql = "INSERT INTO USERS (userName,passWord,firstName,lastName) VALUES('py802','pass','patrick','placeholders')";
+if($conn->query($sql) === TRUE){
+	echo "\r\n User inserted";
+}
+else {
+	echo "Error creating table: " . $conn->error;
+}
+$conn->close();
 
 ?> 
