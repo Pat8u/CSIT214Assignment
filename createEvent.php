@@ -6,13 +6,12 @@ $coordinatorid = 1; //placeholder for now, waiting for the user table to be crea
 $title = htmlspecialchars($_POST["title"]);
 $description = htmlspecialchars($_POST["Edescript"]);
 $edate = htmlspecialchars($_POST["edate"] ." ".$_POST["edate-time"].":00");
-$creationedate = $dateget -> getTimestamp();
 $location = htmlspecialchars($_POST["Eloc"]);
 
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql = "INSERT INTO EVENTS (title,description,edate,creationedate,location,coordinatorid) VALUES ('$title','$description','$edate','$creationedate',
+$sql = "INSERT INTO EVENTS (title,description,edate,creationedate,location,coordinatorid) VALUES ('$title','$description','$edate',now(),
 '$location','$coordinatorid')";
 
 
