@@ -25,6 +25,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 $sql = "CREATE TABLE USERS (
 Uid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 userName VARCHAR(30) NOT NULL,
+passWord VARCHAR(30) NOT NULL,
 firstName VARCHAR(30) NOT NULL,
 lastName VARCHAR(30) NOT NULL,
 email VARCHAR(50),
