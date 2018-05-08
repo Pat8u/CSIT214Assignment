@@ -42,6 +42,7 @@ Eid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(30) NOT NULL,
 description TEXT,
 edate DATETIME,
+creationedate TIMESTAMP,
 location VARCHAR(200),
 coordinatorid INT(6) UNSIGNED,
 FOREIGN KEY (coordinatorid) REFERENCES USERS(Uid)
