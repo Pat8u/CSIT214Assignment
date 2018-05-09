@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
 
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+ 
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    	var myJSON = JSON.parse(this.responseText);
+    	document.getElementById("demo").innerHTML = myJSON.title;
+    }
+  };
+  xhttp.open("POST", "getEvent.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("Eid=1");
+}
+</script>
+
+</body>
+</html>
