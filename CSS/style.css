@@ -1,0 +1,63 @@
+#page {
+	width: 50%;
+	min-width: 960px;
+	height: 100%;
+	margin: 0 auto; 
+}
+
+.eventTable {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: justify; 
+}
+
+.eventTable tr {
+	border: 1px solid black;
+}
+
+.leftCol {
+	width: 65%;
+	vertical-align: top;
+	padding-left: 5px;
+}
+
+.middleCol {
+	width: 5%; 
+}
+
+.rightCol {
+	width: 30%;
+	vertical-align: top;
+	padding-top: 35px;
+}
+
+.bookButton {
+	padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+	margin-bottom: 16px;
+}
+
+#searchTable {
+	width: 100%;
+	text-align: center;
+}
+
+#leftColSearch {
+	width: 35%;
+}
+
+#middleColSearch {
+	width: 35%; 
+}
+
+#rightColSearch {
+	width: 30%;
+}
+
+#currButton {
+    text-decoration: none;
+    font-size: 14px;
+	padding: 5px 10px;
+}
