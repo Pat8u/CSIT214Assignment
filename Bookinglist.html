@@ -1,0 +1,74 @@
+<html>
+<head>
+	<script type="text/javascript">
+		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    	   if (this.readyState == 4 && this.status == 200) {
+    			var bookJSON = JSON.parse(this.responseText);
+          var bookingTablediv = document.getElementById("bookingTablediv");
+          var bookingTable = document.createElement("TABLE");
+          bookingTablediv.appendChild(bookingTable);
+          /*var tablerow = document.createElement("tr");
+          var tablehead = document.createElement("th");
+          bookingTable.appendChild(tablerow);
+          tablerow.appendChild(tablehead);*/
+          for(i = 0; i < bookJSON.length; i++){
+            var tablerow = document.createElement("tr");
+            var tablehead = document.createElement("th");
+            bookingTable.appendChild(tablerow);
+            tablerow.appendChild(tablehead);
+
+            var textnode = document.createTextNode(bookJSON[i].title);
+            tablehead.appendChild(textnode);
+            var tablerow = document.createElement("tr");
+            var tablehead = document.createElement("td");
+            bookingTable.appendChild(tablerow);
+            tablerow.appendChild(tablehead);
+            var textnode = document.createTextNode("Booking Info:");
+            tablehead.appendChild(textnode);
+
+            var tablerow = document.createElement("tr");
+            var tablehead = document.createElement("td");
+            bookingTable.appendChild(tablerow);
+            tablerow.appendChild(tablehead);
+            var textnode = document.createTextNode("Time Booked: " + bookJSON[i].bookingDate);
+            tablehead.appendChild(textnode);
+            var tablehead = document.createElement("td");
+            tablerow.appendChild(tablehead);
+            var textnode = document.createTextNode("Additional Information: " + bookJSON[i].additionalInfo);
+            tablehead.appendChild(textnode);
+
+            var tablerow = document.createElement("tr");
+            var tablehead = document.createElement("td");
+            bookingTable.appendChild(tablerow);
+            tablerow.appendChild(tablehead);
+            var textnode = document.createTextNode("Event Location: " + bookJSON[i].location);
+            tablehead.appendChild(textnode);
+            var tablehead = document.createElement("td");
+            tablerow.appendChild(tablehead);
+            var textnode = document.createTextNode("Event Date: " + bookJSON[i].edate);
+            tablehead.appendChild(textnode);
+
+
+
+          }
+    		}
+  		}
+  		xhttp.open("POST", "Bookinglist.php", true);
+  		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  		xhttp.send();
+
+
+  </script>
+</head>
+<title>TestPage</title>
+<body>
+
+<div id = "bookingTablediv">
+  
+
+
+</div>
+
+</body>
+</html>
