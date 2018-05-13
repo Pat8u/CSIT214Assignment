@@ -3,8 +3,25 @@
 		<title>Events @ UOW</title>
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<script type="text/javascript" src="javascript.js"></script>
+		<script>
+		function loadbookingpage(n){
+			//need to create a hidden form in order to send the get request to the booking page and to redirect the user
+			var hidForm, eventId;
+			hidForm = document.createElement('form');
+			hidForm.action = 'Bookingpage.php';
+			hidForm.method = 'get';
+			eventId = document.createElement('input');
+			eventId.type = 'hidden';
+			eventId.name = 'Eid';
+			eventId.value = n;
+			hidForm.appendChild(eventId);
+			document.getElementById('hidden_form_container').appendChild(hidForm);
+			hidForm.submit();
+		}
+		</script>
 </head>
 <body>
+  <div id="hidden_form_container" style="display:none;"></div>
   <div id="page">
     <h1>Events | Find an event</h1>
     </hr>
@@ -52,7 +69,7 @@
 		the years, sometimes by accident, sometimes on purpose 
 		(injected humour and the like).
 			</p>
-			<button class="bookButton" type="button">Make a booking</button>
+			<button class="bookButton" type="button" onclick = "loadbookingpage(1)">Make a booking</button>
 			</td>
 			<td class="middleCol"></td>
 			<td class="rightCol">

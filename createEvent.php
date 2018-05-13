@@ -36,7 +36,7 @@ $conn->close();
 		Event Created
 	</title>
 <body>
-	Event created <br> <a href = "/index.html">Homepage</a>
+	Event created <br> <a href = "/">Homepage</a>
 
 </body>
 
