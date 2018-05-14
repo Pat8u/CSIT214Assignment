@@ -19,7 +19,7 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 		
 		$_SESSION['Uid']  = $row['Uid'];
 		$_SESSION['uName']  = $uName;
-		header("Location:home.php"); 
+		header("Location:home.php"); //index.html??
 	}
 	$conn->close();
 ?>
