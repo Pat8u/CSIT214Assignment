@@ -18,6 +18,10 @@
 			document.getElementById('hidden_form_container').appendChild(hidForm);
 			hidForm.submit();
 		}
+
+		function loadbookinglist(n){
+			window.location.replace("Bookinglist.html");
+		}
 		</script>
 </head>
 <body>
@@ -46,7 +50,7 @@
 				
 			</td>
 			<td id="rightColSearch">
-				<button id="currButton" type="button">Current Bookings</button>
+				<button id="currButton" type="button" onclick = "loadbookinglist()">Current Bookings</button>
 			</td>
 		</tr>
 	</table>

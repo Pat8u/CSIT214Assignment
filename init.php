@@ -31,7 +31,7 @@ email VARCHAR(50),
 regDate TIMESTAMP
 )";
 if($conn->query($sql) === TRUE){
-	echo "\n\r USER Table created";
+	echo "\n\r USERS Table created";
 }
 else {
 	echo "Error creating database: " . $conn->error;
