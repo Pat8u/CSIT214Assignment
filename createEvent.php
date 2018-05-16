@@ -1,6 +1,7 @@
 <?php 
 
 require 'sqlinfo.php';
+session_start();
 $dateget = new DateTime();
 $coordinatorid = 1; //placeholder for now, waiting for the user table to be created
 $title = htmlspecialchars($_POST["title"]);

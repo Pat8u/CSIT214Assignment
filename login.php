@@ -1,28 +1,4 @@
-<?php
-require 'sqlinfo.php';
-session_start();
 
-if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
-{
-    $uName = htmlspecialchars($_POST['uName']);
-    $uPass = md5($_POST['uPass']);
-	$conn = new mysqli($servername, $username, $password,$dbname);
-	$qry = "SELECT userName FROM USERS WHERE userName='$uName' and passWord='$uPass'";
-	 
-	$result = mysql_query($qry,$conn);
-	 
-	if(!$result || mysql_num_rows($result) <= 0){
-		echo "Error logging in. The username or password does not match";
-	}
-    else{  
-		$row = mysql_fetch_assoc($result);
-		
-		$_SESSION['Uid']  = $row['Uid'];
-		$_SESSION['uName']  = $uName;
-		header("Location:home.php"); //index.html??
-	}
-	$conn->close();
-?>
  
 <html>
 <head>
@@ -53,3 +29,32 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 
 </body>
 </html>
+<?php
+require 'sqlinfo.php';
+
+if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
+{
+    $uName = htmlspecialchars($_POST['uName']);
+    $uPass = md5($_POST['uPass']);
+    
+  $conn = new mysqli($servername, $username, $password,$dbname);
+  $qry = "SELECT userName, Uid FROM USERS WHERE userName='$uName' and passWord='$uPass'";
+   
+  $result = mysqli_query($conn,$qry);
+  
+  if(!$result || mysqli_num_rows($result) === 0){
+    echo "Error logging in. The username or password does not match";
+
+  }
+    else{  
+    $row = mysqli_fetch_assoc($result);
+    session_start();
+    $_SESSION['Uid']  = $row['Uid'];
+    
+    $_SESSION['uName']  = $uName;
+    header("Location:index.html"); //index.html??
+  }
+
+}
+  $conn->close();
+?>

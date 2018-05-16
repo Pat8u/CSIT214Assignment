@@ -1,7 +1,7 @@
 <?php 
 require "sqlinfo.php";
-//PLACEHOLDER
-$Uid = 1; //this is simply a placeholder what will actually happen here is I will get the user id from the session.
+session_start();
+$Uid = $_SESSION["Uid"];
 $Eid = $_POST["Eid"];
 $additionalinfo = htmlspecialchars($_POST["additionalinfo"]);
 if($Uid == null){

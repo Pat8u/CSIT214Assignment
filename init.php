@@ -24,7 +24,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 $sql = "CREATE TABLE USERS (
 Uid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 userName VARCHAR(30) NOT NULL,
-passWord VARCHAR(30) NOT NULL,
+passWord VARCHAR(50) NOT NULL,
 firstName VARCHAR(30) NOT NULL,
 lastName VARCHAR(30) NOT NULL,
 email VARCHAR(50),
@@ -82,13 +82,14 @@ if($conn->query($sql) === TRUE){
 else {
 	echo "Error creating table: " . $conn->error;
 }
+$password = md5(pass);
 //creating a placeholder user
-$sql = "INSERT INTO USERS (userName,passWord,firstName,lastName) VALUES('py802','pass','patrick','placeholders')";
+$sql = "INSERT INTO USERS (userName,passWord,firstName,lastName) VALUES('py802','$password','patrick','placeholders')";
 if($conn->query($sql) === TRUE){
 	echo "\r\n User inserted";
 }
 else {
-	echo "Error creating table: " . $conn->error;
+	echo "Error inserting user: " . $conn->error;
 }
 $conn->close();
 

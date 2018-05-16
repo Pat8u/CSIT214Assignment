@@ -1,6 +1,7 @@
 <?php
 require "sqlinfo.php";
-$Uid = 1; //placeholder
+session_start();
+$Uid = $_SESSION["Uid"]; //placeholder
 $isAdmin = false;
 $conn = new mysqli($servername, $username, $password,$dbname);
 
