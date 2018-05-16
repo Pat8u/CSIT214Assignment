@@ -3,44 +3,26 @@
 		<title>Events @ UOW</title>
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<script type="text/javascript" src="javascript.js"></script>
-		<script>
-		function loadbookingpage(n){
-			//need to create a hidden form in order to send the get request to the booking page and to redirect the user
-			var hidForm, eventId;
-			hidForm = document.createElement('form');
-			hidForm.action = 'Bookingpage.php';
-			hidForm.method = 'get';
-			eventId = document.createElement('input');
-			eventId.type = 'hidden';
-			eventId.name = 'Eid';
-			eventId.value = n;
-			hidForm.appendChild(eventId);
-			document.getElementById('hidden_form_container').appendChild(hidForm);
-			hidForm.submit();
-		}
-
-		function loadbookinglist(n){
-			window.location.replace("Bookinglist.html");
-		}
-		</script>
 </head>
 <body>
   <div id="hidden_form_container" style="display:none;"></div>
   <div id="page">
-    <h1>Events | Find an event</h1>
-    </hr>
-    <p>
-		It is a long established fact that a reader will be distracted 
-		by the readable content of a page when looking at its layout. 
-		The point of using Lorem Ipsum is that it has a more-or-less normal 
-		distribution of letters, as opposed to using 'Content here, content 
-		here', making it look like readable English. Many desktop publishing 
-		packages and web page editors now use Lorem Ipsum as their default 
-		model text, and a search for 'lorem ipsum' will uncover many web 
-		sites still in their infancy. Various versions have evolved over 
-		the years, sometimes by accident, sometimes on purpose 
-		(injected humour and the like).
-    </p>
+    <div id="pageTitle">Find An Event</div>
+	<br>
+	<div id="contentRapper">
+	<div id="leftSection">
+	<div id="noticeDiv"></div>
+	</div>
+	<div id="rightSection">
+    <div id="introDiv">
+		<p>
+			The University of Wollongong regularly holds and attends information sessions 
+			for prospective undergraduate and postgraduate students. These events are designed 
+			to give you the information you need about choosing courses and studying at UOW.
+		</p>
+	</div>
+	<br>
+	<div id="searchDiv">
 	<table id="searchTable">
 		<tr>
 			<td id="leftColSearch">
@@ -50,98 +32,38 @@
 				
 			</td>
 			<td id="rightColSearch">
-				<button id="currButton" type="button" onclick = "loadbookinglist()">Current Bookings</button>
+				<button id="currButton" type="button" onclick = "loadbookingpage()">Current Bookings</button>
 			</td>
 		</tr>
 	</table>
+	</div>
 	<br>
+	<div id="eventsDiv">
 	<table class="eventTable">
 		<tr>
 			<td class="leftCol">
-				<p>
-					Event 1
-				</p>
-				<p>
-					It is a long established fact that a reader will be distracted 
-		by the readable content of a page when looking at its layout. 
-		The point of using Lorem Ipsum is that it has a more-or-less normal 
-		distribution of letters, as opposed to using 'Content here, content 
-		here', making it look like readable English. Many desktop publishing 
-		packages and web page editors now use Lorem Ipsum as their default 
-		model text, and a search for 'lorem ipsum' will uncover many web 
-		sites still in their infancy. Various versions have evolved over 
-		the years, sometimes by accident, sometimes on purpose 
-		(injected humour and the like).
-			</p>
-			<button class="bookButton" type="button" onclick = "loadbookingpage(1)">Make a booking</button>
+				<p id="event1Name"></p>
+				<p id="event1Desc"></p>
+			<button class="bookButton" type="button" onclick = "loadbookinglist()>Make a booking</button>
 			</td>
 			<td class="middleCol"></td>
 			<td class="rightCol">
-				<p>
+				<p id="event1Date">
 					Date: xx/xx/xx
 				</p>
-				<p>
+				<p id="event1Time">
 					Time: xx:xx:xx
 				</p>
-				<p>
+				<p id="event1Loc">
 					Location:
 				</p>
 			</td>
 		</tr>
 	</table>
 	<br>
-	<table class="eventTable">
-		<tr>	
-			<td class="leftCol">
-				<p>
-					Event 2
-				</p>
-				<p>
-					It is a long established fact that a reader will be distracted 
-		by the readable content of a page when looking at its layout. 
-		The point of using Lorem Ipsum is that it has a more-or-less normal 
-		
-				</p>
-			</td>
-			<td class="middleCol"></td>
-			<td class="rightCol">
-				<p>
-					Date: xx/xx/xx
-				</p>
-				<p>
-					Time: xx:xx:xx
-				</p>
-				<p>
-					Location:
-				</p>
-			</td>
-		</tr>
-	</table>
-	<br>
-	<table class="eventTable">
-		<tr>	
-			<td class="leftCol">
-				<p>
-					Event 3
-				</p>
-				<p>
-					dsgagaehshaghsagfsg
-				</p>
-			</td>
-			<td class="middleCol"></td>
-			<td class="rightCol">
-				<p>
-					Date: xx/xx/xx
-				</p>
-				<p>
-					Time: xx:xx:xx
-				</p>
-				<p>
-					Location:
-				</p>
-			</td>
-		</tr>
-	</table>
+	</div>
+	</div>
+	</div>
 </div>
 </body> 
 </HTML>

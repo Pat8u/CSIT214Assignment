@@ -1,8 +1,62 @@
+* {
+	font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+	font-size: 14px;
+}
+
+#pageTitle {
+	width: 100%;
+	font-family: 'Chronicle Display A', 'Chronicle Display B', "Times New Roman", Times, Georgia, serif;
+	font-size: 48px;
+	color: #0c2340;
+	border-bottom: 1px solid #c00;
+}
+
+body {
+	background-color: #f6f6f6;
+}
+
 #page {
-	width: 50%;
-	min-width: 960px;
+	width: 70%;
 	height: 100%;
-	margin: 0 auto; 
+	margin: 0 auto;
+	background-color: #f6f6f6;
+	
+}
+
+#contentRapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+#leftSection {
+	width: 25%;
+	float: left;
+}
+
+#noticeDiv {
+	background-color: white;
+	padding: 20px;
+	height: 
+}
+
+#rightSection {
+	width: 73%;
+	float: right;
+}
+
+#introDiv {
+	background-color: white;
+	padding: 15px;
+}
+
+#eventsDiv {
+	background-color: white;
+	padding: 20 20 0 20px;
+}
+
+#searchDiv {
+	background-color: white;
+	padding: 15px;
 }
 
 .eventTable {
@@ -12,7 +66,7 @@
 }
 
 .eventTable tr {
-	border: 1px solid black;
+	border: 1px solid #eee;
 }
 
 .leftCol {
@@ -36,7 +90,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-	margin-bottom: 16px;
+	margin-bottom: 5px;
 }
 
 #searchTable {
@@ -60,4 +114,12 @@
     text-decoration: none;
     font-size: 14px;
 	padding: 5px 10px;
+}
+
+#event1Name {
+	min-height: 35px;
+}
+
+#event1Desc{
+	min-height: 81px;
 }
