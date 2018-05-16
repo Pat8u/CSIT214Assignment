@@ -53,6 +53,22 @@ if($conn->query($sql) === TRUE){
 else {
 	echo "Error creating table: " . $conn->error;
 }
+$sql = "CREATE TABLE UNAPPEVENTS (
+Eid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(30) NOT NULL,
+description TEXT,
+edate DATETIME,
+creationedate TIMESTAMP,
+location VARCHAR(200),
+coordinatorid INT(6) UNSIGNED,
+FOREIGN KEY (coordinatorid) REFERENCES USERS(Uid)
+)";
+if($conn->query($sql) === TRUE){
+	echo "\r\n Unapproved EVENTS Table created ";
+}
+else {
+	echo "Error creating table: " . $conn->error;
+}
 
 $sql = "CREATE TABLE BOOKINGS (
 Bid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -85,6 +101,13 @@ else {
 $password = md5(pass);
 //creating a placeholder user
 $sql = "INSERT INTO USERS (userName,passWord,firstName,lastName) VALUES('py802','$password','patrick','placeholders')";
+if($conn->query($sql) === TRUE){
+	echo "\r\n User inserted";
+}
+else {
+	echo "Error inserting user: " . $conn->error;
+}
+$sql = "INSERT INTO ADMIN (Uid,adminLvl,role) VALUES(1,1,'Superuserplaceholder')";
 if($conn->query($sql) === TRUE){
 	echo "\r\n User inserted";
 }
