@@ -1,12 +1,12 @@
 <?php
 require "sqlinfo.php";
 session_start();
-$Uid = $_SESSION["Uid"]; //placeholder
+$Uid = $_SESSION["Uid"]; 
 $isAdmin = false;
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 if($Uid == null){
-	echo "need to make an account"; //need to add a link to the account creation place
+	echo 'need to make an account <br />   <a href = "createUser.php">Create Account</a>'; 
 }
 else{
 	$sql = mysqli_query($conn,"SELECT a.Uid FROM USERS A JOIN ADMIN B ON a.Uid = b.Uid WHERE a.Uid = '$Uid'");
@@ -22,7 +22,7 @@ else{
 				$rows[] = $r;
 			}
 		
-		$rows = json_encode($rows); //don't need this since Im just using the php document
+		$rows = json_encode($rows); 
 		echo $rows;
 
 		}
@@ -31,7 +31,18 @@ else{
 	}
 	
 	else {
-		//admin view
+		$sql = "SELECT a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid'";
+		$results = $conn -> query($sql);
+		$rows = array();
+		if($results -> num_rows > 0){
+			while($r = mysqli_fetch_assoc($results)){
+				$rows[] = $r;
+			}
+		
+		$rows = json_encode($rows); 
+		echo $rows;
+
+		}
 	}
 }
 

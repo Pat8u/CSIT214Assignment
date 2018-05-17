@@ -1,0 +1,26 @@
+<HTML>
+<head>
+		<title>History Page</title>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		
+</head>
+<body>
+  This is the history page. If you are an admin this will alow you to view statistics related to events <br/>
+  <br />
+
+  <form id = "statForm" action = "ViewHistory.php" target="_self" method="post">
+  <select name = "Attributes">
+  	<option value="location">Location</option>
+  	<option value="edate">Day</option>
+  </select>
+  <br/>
+  if you are entering for the day field please use this format (YYYY-MM-DD)
+  <br />
+  <input type = "text" name = "field"><br/>
+
+  <br /> This is an optional form for location for usage on a  specific week Leave blank <br /> 
+  <input type = "date" name = "optfield"><br />
+    <input type = "submit" value = "Submit" name = "submit" id = "submit" />
+  </form>
+</body> 
+</HTML>

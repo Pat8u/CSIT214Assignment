@@ -65,6 +65,6 @@ function loadbookingpage(n){
       hidForm.submit();
     }
 
-function loadbookinglist(n){
+function loadbookinglist(){
   window.location.replace("Bookinglist.html");
 }
