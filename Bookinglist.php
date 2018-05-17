@@ -13,7 +13,7 @@ else{
 	
 	if($sql->num_rows == 0){
 	//non admin view
-		$sql = "SELECT a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid
+		$sql = "SELECT a.Bid,a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid
 		WHERE b.Uid = '$Uid'";
 		$results = $conn -> query($sql);
 		$rows = array();

@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<script type="text/javascript">
 		var xhttp = new XMLHttpRequest();
   		xhttp.onreadystatechange = function() {
@@ -49,6 +50,27 @@
             var textnode = document.createTextNode("Event Date: " + bookJSON[i].edate);
             tablehead.appendChild(textnode);
 
+            var tablehead = document.createElement("td");
+            tablerow.appendChild(tablehead);
+            var butnode = document.createElement("BUTTON");
+           
+            
+            butnode.setAttribute("id","currButton");
+           
+            butnode.setAttribute("type","button");
+            
+            butnode.setAttribute("onclick","modifyBooking("+bookJSON[i].Bid+")");
+
+            var buttexnode = document.createTextNode("Modify Booking");
+
+            
+            butnode.appendChild(buttexnode);
+            tablerow.appendChild(tablehead);
+            tablehead.appendChild(butnode);
+
+
+
+
 
 
           }
@@ -58,12 +80,24 @@
   		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   		xhttp.send();
 
-
+      function modifyBooking(n){
+        var hidForm, eventId;
+          hidForm = document.createElement('form');
+          hidForm.action = 'ModifyBookings.php';
+          hidForm.method = 'get';
+          eventId = document.createElement('input');
+          eventId.type = 'hidden';
+          eventId.name = 'Bid';
+          eventId.value = n;
+          hidForm.appendChild(eventId);
+          document.getElementById('hidden_form_container').appendChild(hidForm);
+          hidForm.submit();
+      }
   </script>
 </head>
 <title>TestPage</title>
 <body>
-
+<div id="hidden_form_container" style="display:none;"></div>
 <div id = "bookingTablediv">
   
 
