@@ -12,6 +12,7 @@ $date = new DateTime($optValue);
 
 
 
+
 ?>
 
 <html>
@@ -24,7 +25,7 @@ $date = new DateTime($optValue);
 Event id: <br />
 <input type = "text" name = "Eid" value = <?php echo htmlspecialchars($Eid)?> readonly> <br />
 Title of event:
-<input type = "text" name = "title" value = <?php echo htmlspecialchars($row["title"]) ?>><br>
+<input type = "text" name = "title" value = "<?php echo htmlspecialchars($row["title"])?>"><br>
 Event Description:<br>
 <textarea name="Edescript" rows = "10" cols = "50"  ><?php echo htmlspecialchars($row["description"])?></textarea><br>
 Date and time of the event:<br>
