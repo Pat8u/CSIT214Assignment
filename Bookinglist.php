@@ -9,12 +9,12 @@ if($Uid == null){
 	echo 'need to make an account <br />   <a href = "createUser.php">Create Account</a>'; 
 }
 else{
-	$sql = mysqli_query($conn,"SELECT a.Uid FROM USERS A JOIN ADMIN B ON a.Uid = b.Uid WHERE a.Uid = '$Uid'");
+	$sql = mysqli_query($conn,"SELECT a.Uid FROM USERS a JOIN ADMIN b ON a.Uid = b.Uid WHERE a.Uid = $Uid");
 	
 	if($sql->num_rows == 0){
 	//non admin view
-		$sql = "SELECT a.Bid,a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid
-		WHERE b.Uid = '$Uid'";
+		$sql = "SELECT a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid
+		WHERE b.Uid = $Uid";
 		$results = $conn -> query($sql);
 		$rows = array();
 		if($results -> num_rows > 0){
@@ -28,10 +28,11 @@ else{
 		}
 
 
+
 	}
 	
 	else {
-		$sql = "SELECT a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid'";
+		$sql = "SELECT a.title,a.location,a.edate,b.Bid,b.bookingDate,b.additionalInfo FROM EVENTS a JOIN BOOKINGS b ON a.Eid = b.Eid";
 		$results = $conn -> query($sql);
 		$rows = array();
 		if($results -> num_rows > 0){

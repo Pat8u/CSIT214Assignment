@@ -10,7 +10,7 @@ if($Uid == null){
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql = "INSERT INTO BOOKINGS (Uid,Eid,bookingDate,additionalinfo) VALUES ('$Uid','$Eid',now(),'$additionalinfo')";
+$sql = "INSERT INTO BOOKINGS (Uid,Eid,bookingDate,additionalinfo) VALUES ($Uid,$Eid,now(),'$additionalinfo')";
 
 if($conn->query($sql) === TRUE){
 	

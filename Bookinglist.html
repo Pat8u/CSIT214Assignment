@@ -4,8 +4,9 @@
 	<script type="text/javascript">
 		var xhttp = new XMLHttpRequest();
   		xhttp.onreadystatechange = function() {
-    	   if (this.readyState == 4 && this.status == 200) {
-    			var bookJSON = JSON.parse(this.responseText);
+    	   if (this.readyState == 4 && this.status == 200 &&this.responseText != "") {
+    			console.log(this.responseText);
+          var bookJSON = JSON.parse(this.responseText);
           var bookingTablediv = document.getElementById("bookingTablediv");
           var bookingTable = document.createElement("TABLE");
           bookingTablediv.appendChild(bookingTable);
@@ -68,13 +69,34 @@
             tablerow.appendChild(tablehead);
             tablehead.appendChild(butnode);
 
+            var tablehead = document.createElement("td");
+            tablerow.appendChild(tablehead);
+            var butnode = document.createElement("BUTTON");
+           
+            
+            butnode.setAttribute("id","delButton");
+           
+            butnode.setAttribute("type","button");
+            
+            butnode.setAttribute("onclick","deleteBooking("+bookJSON[i].Bid+")");
+
+            var buttexnode = document.createTextNode("Delete Booking");
+
+            
+            butnode.appendChild(buttexnode);
+            tablerow.appendChild(tablehead);
+            tablehead.appendChild(butnode);
+
 
 
 
 
 
           }
-    		}
+    		}else{
+          
+         
+        }
   		}
   		xhttp.open("POST", "Bookinglist.php", true);
   		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -84,6 +106,19 @@
         var hidForm, eventId;
           hidForm = document.createElement('form');
           hidForm.action = 'ModifyBookings.php';
+          hidForm.method = 'get';
+          eventId = document.createElement('input');
+          eventId.type = 'hidden';
+          eventId.name = 'Bid';
+          eventId.value = n;
+          hidForm.appendChild(eventId);
+          document.getElementById('hidden_form_container').appendChild(hidForm);
+          hidForm.submit();
+      }
+      function deleteBooking(n){
+        var hidForm, eventId;
+          hidForm = document.createElement('form');
+          hidForm.action = 'deleteBooking.php';
           hidForm.method = 'get';
           eventId = document.createElement('input');
           eventId.type = 'hidden';

@@ -16,6 +16,21 @@
       		document.getElementById('hidden_form_container').appendChild(hidForm);
       		hidForm.submit();
 		}
+		function ShowBookings(n){
+			var hidForm, eventId;
+      		hidForm = document.createElement('form');
+      		hidForm.action = 'ShowSpecificBookings.php';
+      		hidForm.method = 'get';
+      		eventId = document.createElement('input');
+      		eventId.type = 'hidden';
+      		eventId.name = 'Eid';
+      		eventId.value = n;
+      		hidForm.appendChild(eventId);
+      		document.getElementById('hidden_form_container').appendChild(hidForm);
+      		hidForm.submit();
+
+
+		}
 
 
 
@@ -58,7 +73,7 @@ else{
 	if($results->num_rows > 0){
 		
 		while($row = $results -> fetch_assoc()){
-			echo '<br/> Id: ' . $row["Eid"] . '  Title: ' . $row["title"] . 'Location: ' . $row["location"] . '  Date: ' . $row["edate"] . '<br/><button id="currButton" type="button" onclick = "modifyEvent('.$row["Eid"].')">modify event</button><br/><br/>';
+			echo '<br/> Id: ' . $row["Eid"] . '  Title: ' . $row["title"] . 'Location: ' . $row["location"] . '  Date: ' . $row["edate"] . '<br/><button id="currButton" type="button" onclick = "modifyEvent('.$row["Eid"].')">modify event</button><button id="currButton" type="button" onclick = "ShowBookings('.$row["Eid"].')">ShowBookings</button><br/><br/>';
 		}
 		
 	
