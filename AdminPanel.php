@@ -12,7 +12,7 @@ if($sql->num_rows == 0){
 
 }
 else{
-	echo 'This is a bunch of admin functions that you can perform <br/> <a href = "ViewUnapprovedEvents.php">View and Approve Unapproved Events</a><br/><a href = "HistoryPage.html"> View statistics related to events </a> '
+	echo 'This is a bunch of admin functions that you can perform <br/> <a href = "ViewUnapprovedEvents.php">View and Approve Unapproved Events</a><br/><a href = "HistoryPage.html"> View statistics related to events </a> ';
 
 
 
