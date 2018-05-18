@@ -33,6 +33,10 @@
         } else {
           document.getElementById("locError").innerHTML = "";
         }
+        
+        if((title == null)||(desc == null)||(date == null)||(time == null)||(location == null)) {
+		      return false;
+	      }
 
       }
   </script>
