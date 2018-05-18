@@ -61,7 +61,7 @@ $qry = "SELECT Uid FROM USERS WHERE Uid = $Uid";
 $result = mysqli_query($conn,$qry);
 if(!$result || mysqli_num_rows($result) === 0){
 	echo "Please login to change account details";
-	header("Location:login.html");
+	header("Location:login.php");
 	}
 }
   $conn->close();
