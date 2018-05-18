@@ -23,6 +23,7 @@
 <title>Own Events</title>
 <div id="hidden_form_container" style="display:none;"></div>
 <body>
+<a href ="/AdminPanel.php">Back to admin panel </a> <br />
 A list of unapproved events can be seen here
 
 

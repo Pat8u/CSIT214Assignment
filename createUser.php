@@ -7,7 +7,16 @@
 </head>
 
 <body>
-
+<div id ="link_header"><ul>
+<li><a href = "/"> Home </a> </li>
+<li><a href = "AdminPanel.php">AdminPanel</a></li>
+<li><a href = "createUser.php">Create User</a></li>
+<li><a href = "login.php">Login</a></li>
+<li><a href = "changeDetails.php">Change Details WIP(BRAYDON NEEDS TO DO THIS)</a></li>
+<li><a href = "logout.php">logout WIP(BRAYDON NEEDS TO DO THIS)</a></li>
+<li><a href = "ViewOwnEvents.php">View Own events</a></li>
+</ul>
+</div>
 <form action="" method="post">
 Username:
 <input type = "text" name = "uName"><br>
