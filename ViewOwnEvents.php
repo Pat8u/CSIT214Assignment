@@ -41,6 +41,7 @@
 <body>
 <div id ="link_header"><ul>
 <li><a href = "/"> Home </a> </li>
+<li><a href = "/eventcreation.html"> Event Creation </a> </li>
 <li><a href = "AdminPanel.php">AdminPanel</a></li>
 <li><a href = "createUser.php">Create User</a></li>
 <li><a href = "login.php">Login</a></li>
