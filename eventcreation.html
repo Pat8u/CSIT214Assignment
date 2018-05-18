@@ -15,6 +15,9 @@
 			document.getElementById("demo2").innerHTML = minMonth;
 			document.getElementById("demo3").innerHTML = minYear;
 			
+			var splitDate = date.split(/[\/ -.]+/);
+			document.getElementById("demo4").innerHTML = splitDate;
+			
 			if (date == null || date.trim() == "") {
 				document.getElementById("dateError").innerHTML = "Please fill in the empty field";
 			} else if (/^(((0[1-9]|[12][0-9])[\/\-\.](0[1-9]|1[0-2]))|(30[\/\-\.](0[13-9]|1[0-2]))|(31[\/\-\.](0[13578]|1[02])))[\/\-\.]((2018|2019))$/.test(date) == false) {
@@ -53,6 +56,7 @@ Event Location:<br>
 <br>
 <span id="demo3"></span>
 <br>
+<span id="demo3"></span>
 
 
 
