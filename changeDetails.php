@@ -5,8 +5,8 @@
 <script>
 function compare() {
 	var password1, password2;
-	password1 = getElementById("pass1");
-	password2 = getElementById("pass2");
+	password1 = getElementById("pass1").value;
+	password2 = getElementById("pass2").value;
 	
 	if(password1 == password2){
 		return true;
@@ -56,13 +56,12 @@ require 'sqlinfo.php';
 session_start();
 $Uid = $_SESSION["Uid"];
 $conn = new mysqli($servername, $username, $password,$dbname);
-$qry = "SELECT Uid FROM USERS WHERE Uid = $Uid";
 
-$result = mysqli_query($conn,$qry);
-if(!$result || mysqli_num_rows($result) === 0){
+if(ISSET $_SESSION["Uid"]){
+	
+	} else {
 	echo "Please login to change account details";
 	header("Location:login.php");
 	}
-}
   $conn->close();
 ?>
