@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<script type="text/javascript" src="javascript.js"></script>
 </head>
-<body>
+<body onload="loadeventList()">
 <div id ="link_header"><ul>
 <li><a href = "/"> Home </a> </li>
 <li><a href = "AdminPanel.php">AdminPanel</a></li>
@@ -49,27 +49,7 @@
 	</div>
 	<br>
 	<div id="eventTablediv">
-	<table class="eventTable">
-		<tr>
-			<td class="leftCol">
-				<p id="event1Name"></p>
-				<p id="event1Desc"></p>
-			<button class="bookButton" type="button" onclick = "loadbookingpage(1)">Make a booking</button>
-			</td>
-			<td class="middleCol"></td>
-			<td class="rightCol">
-				<p id="event1Date">
-					Date: xx/xx/xx
-				</p>
-				<p id="event1Time">
-					Time: xx:xx:xx
-				</p>
-				<p id="event1Loc">
-					Location:
-				</p>
-			</td>
-		</tr>
-	</table>
+	
 	<br>
 	</div>
 	</div>

@@ -42,6 +42,26 @@ function loadeventList() {
             tablerow.appendChild(tablehead);
             var textnode = document.createTextNode("Event Date: " + eventJSON[i].edate);
             tablehead.appendChild(textnode);
+
+            var tablehead = document.createElement("td");
+            tablerow.appendChild(tablehead);
+            var butnode = document.createElement("BUTTON");
+           
+            
+            butnode.setAttribute("id","currButton");
+           
+            butnode.setAttribute("type","button");
+            
+            butnode.setAttribute("onclick","loadbookingpage("+i+1+")");
+
+            var buttexnode = document.createTextNode("Make Booking");
+
+            
+            butnode.appendChild(buttexnode);
+            tablerow.appendChild(tablehead);
+            tablehead.appendChild(butnode);
+
+            
           }
     		}
   		}
