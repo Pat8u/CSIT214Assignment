@@ -22,7 +22,7 @@
 				document.getElementById("dateError").innerHTML = "Please fill in the empty field";
 			} else if (/^(((0[1-9]|[12][0-9])[\/\-\.](0[1-9]|1[0-2]))|(30[\/\-\.](0[13-9]|1[0-2]))|(31[\/\-\.](0[13578]|1[02])))[\/\-\.]((2018|2019))$/.test(date) == false) {
 				document.getElementById("dateError").innerHTML = "Invalid date";
-			} else if (/^(((minDay)[\/\-\.](minMonth)[\/\-\.](minYear)$/.test(date) == true) {
+			} else if (/^(((minDay)[\/\-\.](minMonth)[\/\-\.](minYear)))$/.test(date) == true) {
 				document.getElementById("dateError").innerHTML = "Must be future date";
 			} else {
 				document.getElementById("dateError").innerHTML = "";
