@@ -8,6 +8,7 @@ function loadeventList() {
           eventTablediv.appendChild(eventTable);
  
           for(i = 0; i < eventJSON.length; i++){
+            var Eid = i+1;
             var tablerow = document.createElement("tr");
             var tablehead = document.createElement("th");
             eventTable.appendChild(tablerow);
@@ -52,7 +53,7 @@ function loadeventList() {
            
             butnode.setAttribute("type","button");
             
-            butnode.setAttribute("onclick","loadbookingpage("+i+1+")");
+            butnode.setAttribute("onclick","loadbookingpage("+Eid+")");
 
             var buttexnode = document.createTextNode("Make Booking");
 
