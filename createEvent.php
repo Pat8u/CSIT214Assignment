@@ -11,7 +11,10 @@ $title = htmlspecialchars($_POST["title"]);
 $description = htmlspecialchars($_POST["Edescript"]);
 $edate = htmlspecialchars($_POST["edate"] ." ".$_POST["edate-time"].":00");
 $location = htmlspecialchars($_POST["Eloc"]);
-
+if($Uid == null){
+	echo 'You need an account';
+	echo '<a href = "/"> Go back to Homepage </a>';
+}else{
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 
@@ -51,6 +54,7 @@ if($conn->query($sql) == true){
 }
 else {
 	echo "Error creating table: " . $conn->error;
+}
 }
 }
 $conn->close();

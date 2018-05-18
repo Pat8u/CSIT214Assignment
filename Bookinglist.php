@@ -5,10 +5,8 @@ $Uid = $_SESSION["Uid"];
 $isAdmin = false;
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-if($Uid == null){
-	echo 'need to make an account <br />   <a href = "createUser.php">Create Account</a>'; 
-}
-else{
+
+
 	$sql = mysqli_query($conn,"SELECT a.Uid FROM USERS a JOIN ADMIN b ON a.Uid = b.Uid WHERE a.Uid = $Uid");
 	
 	if($sql->num_rows == 0){
@@ -45,7 +43,7 @@ else{
 
 		}
 	}
-}
+
 
 $conn -> close();
 ?>
