@@ -3,7 +3,6 @@ require 'sqlinfo.php';
 session_start();
 session_unset();
 session_destroy();
-echo "Logged out!\n";
-header("Location:index.html");
+echo 'Successfully logged out. To go back to home page, click <a href = "/">here</a>.';
 exit;
 ?>
