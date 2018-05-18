@@ -1,62 +1,22 @@
 <html>
 <head>
-	<script>
-		
-		function valForm() {
-			var date = document.getElementById("edate").value;
-			var time = document.getElementById("edate-time").value;
-			
-			var d = new Date();
-			var minDay = d.getDate();
-    			var minMonth = d.getMonth(); 
-			var minYear = d.getYear()
-			
-			document.getElementById("demo1").innerHTML = minDay;
-			document.getElementById("demo2").innerHTML = minMonth;
-			document.getElementById("demo3").innerHTML = minYear;
-			
-			var splitDate = date.split(/[\/ -.]+/);
-			document.getElementById("demo4").innerHTML = splitDate;
-			
-			if (date == null || date.trim() == "") {
-				document.getElementById("dateError").innerHTML = "Please fill in the empty field";
-			} else if (/^(((0[1-9]|[12][0-9])[\/\-\.](0[1-9]|1[0-2]))|(30[\/\-\.](0[13-9]|1[0-2]))|(31[\/\-\.](0[13578]|1[02])))[\/\-\.]((2018|2019))$/.test(date) == false) {
-				document.getElementById("dateError").innerHTML = "Invalid date";
-			} else if (/^(((minDay)[\/\-\.](minMonth)[\/\-\.](minYear)))$/.test(date) == true) {
-				document.getElementById("dateError").innerHTML = "Must be future date";
-			} else {
-				document.getElementById("dateError").innerHTML = "";
-			}
-		
-			
-			
-		}
-	</script>
+
 </head>
 <title>TestPage</title>
 <body>
 
-<form id = "eventForm" action = "createEvent.php" onSubmit="return valForm()" target="_self" method="post">
+<form id = "eventForm" action = "createEvent.php" target="_self" method="post">
 Title of event:
 <input type = "text" name = "title"><br>
 Event Description:<br>
 <textarea name="Edescript" rows = "10" cols = "50"></textarea><br>
 Date and time of the event:<br>
-<input type = "date" name = "edate">
-<span id="dateError" class="error"></span>
+<input type = "date" name = "edate" min"2018-05-20">
 <input type = "time" name = "edate-time"><br>
 Event Location:<br>
 <textarea name="Eloc" rows = "10" cols = "50"></textarea><br>
 <input type = "submit" value = "Submit" name = "submit" id = "submit" />
 </form>
-
-<span id="demo1"></span>
-<br>
-<span id="demo2"></span>
-<br>
-<span id="demo3"></span>
-<br>
-<span id="demo3"></span>
 
 
 
