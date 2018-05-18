@@ -123,3 +123,7 @@ body {
 #event1Desc{
 	min-height: 81px;
 }
+
+.error {
+	color: red;
+}
