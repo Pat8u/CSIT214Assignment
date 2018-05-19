@@ -17,7 +17,9 @@ if($results -> num_rows > 0){
 	echo $rows;
 
 }
-
+else{
+	echo '';
+}
 
 	
 	

@@ -1,7 +1,7 @@
 function loadeventList() { 
 	var xhttp = new XMLHttpRequest();
   		xhttp.onreadystatechange = function() {
-    	   if (this.readyState == 4 && this.status == 200) {
+    	   if (this.readyState == 4 && this.status == 200 && this.responseText != "") {
     			var eventJSON = JSON.parse(this.responseText);
           var eventTablediv = document.getElementById("eventTablediv");
           var eventTable = document.createElement("TABLE");
