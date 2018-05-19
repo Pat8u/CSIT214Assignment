@@ -121,7 +121,7 @@ else{
 	}
 }
 else{
-	echo '<br>ADMIN VIEW<br>'
+	echo '<br>ADMIN VIEW<br>';
 	$sql = "SELECT Eid,title,location,edate,coordinatorid FROM EVENTS";
 
 	$results = mysqli_query($conn,$sql);
