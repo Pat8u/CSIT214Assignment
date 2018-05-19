@@ -1,3 +1,4 @@
+
 <html>
 <head>
 
@@ -12,11 +13,28 @@
 <li><a href = "AdminPanel.php">AdminPanel</a></li>
 <li><a href = "createUser.php">Create User</a></li>
 <li><a href = "login.php">Login</a></li>
-<li><a href = "changeDetails.php">Change Details WIP(BRAYDON NEEDS TO DO THIS)</a></li>
-<li><a href = "logout.php">logout WIP(BRAYDON NEEDS TO DO THIS)</a></li>
+<li><a href = "changeDetails.php">Change Details</a></li>
+<li><a href = "logout.php">logout</a></li>
 <li><a href = "ViewOwnEvents.php">View Own events</a></li>
 </ul>
 </div>
+
+<?php 
+require 'sqlinfo.php';
+session_start();
+$Uid = $_SESSION["Uid"];
+$conn = new mysqli($servername, $username, $password,$dbname);
+$qry = "SELECT userName, firstName FROM USERS WHERE Uid = $Uid";
+
+$results = mysqli_query($conn,$qry);
+
+$rows = $results -> fetch_assoc();
+
+
+echo 'This is the change details page for Username:  '.$rows["userName"].'<br /> First Name:  '. $rows["firstName"];
+
+?>
+
 <p>Change Password</p>
 <form action="/changePass.php" method="post">
 Old password:
@@ -39,9 +57,8 @@ Last Name:
 </html>
 
 <?php
-require 'sqlinfo.php';
-session_start();
-$Uid = $_SESSION["Uid"];
+
+
 
 if($Uid != NULL){
 	
@@ -49,4 +66,6 @@ if($Uid != NULL){
 	echo 'Please login to change account details';
 	header("Location:login.php");
 	}
+
+$conn -> close;
 ?>
