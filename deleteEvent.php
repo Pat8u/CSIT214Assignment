@@ -6,7 +6,7 @@ $Eid = $_GET["Eid"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 $sql = "DELETE FROM BOOKINGS WHERE Eid = $Eid";
 if($conn->query($sql) === TRUE){
-	echo 'Bookings for the event successfully deleted';
+	echo 'Bookings for the event successfully deleted<br>';
 }
 else {
 	echo "Error deleteing: " . $conn->error;
