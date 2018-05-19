@@ -129,7 +129,7 @@ else{
 	if($results->num_rows > 0){
 		
 		while($row = $results -> fetch_assoc()){
-			echo '<br/> Id: ' . $row["Eid"] . '  Title: ' . $row["title"] . '    Location: ' . $row["location"] . '  Date: ' . $row["edate"] . '  Coordinator Identification number'. $row["coordinatorid"]. '<br/><button id="currButton" type="button" onclick = "modifyEvent('.$row["Eid"].')">modify event</button><button id="currButton" type="button" onclick = "ShowBookings('.$row["Eid"].')">ShowBookings</button><button id="currButton" type="button" onclick = "deleteEvent('.$row["Eid"].')">Delete Event</button><br/><br/>';
+			echo '<br/> Id: ' . $row["Eid"] . '  Title: ' . $row["title"] . '    Location: ' . $row["location"] . '  Date: ' . $row["edate"] . '  Coordinator Identification number:   '. $row["coordinatorid"]. '<br/><button id="currButton" type="button" onclick = "modifyEvent('.$row["Eid"].')">modify event</button><button id="currButton" type="button" onclick = "ShowBookings('.$row["Eid"].')">ShowBookings</button><button id="currButton" type="button" onclick = "deleteEvent('.$row["Eid"].')">Delete Event</button><br/><br/>';
 		}
 
 
