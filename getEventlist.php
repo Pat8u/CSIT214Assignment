@@ -5,7 +5,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 
 
 		
-$sql = "SELECT title,description,edate,creationedate,location FROM EVENTS";
+$sql = "SELECT Eid,title,description,edate,creationedate,location FROM EVENTS";
 $results = $conn -> query($sql);
 $rows = array();
 if($results -> num_rows > 0){

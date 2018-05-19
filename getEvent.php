@@ -9,7 +9,7 @@ $Eid = intval($Eid);
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql = mysqli_query($conn,"SELECT title,description,edate,creationedate,location FROM EVENTS WHERE Eid = $Eid");
+$sql = mysqli_query($conn,"SELECT Eid,title,description,edate,creationedate,location FROM EVENTS WHERE Eid = $Eid");
 $rows = array();
 
 //we don't need this as the Eid is a primary key therefore there will only ever be one row in the result
