@@ -25,13 +25,12 @@ session_start();
 $Uid = $_SESSION["Uid"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 $qry = "SELECT userName, firstName FROM USERS WHERE Uid = $Uid";
-
+if($Uid != NULL){
 $results = mysqli_query($conn,$qry);
 
-$rows = $results -> fetch_assoc();
-
-
-echo 'This is the change details page for Username:  '.$rows["userName"].'<br /> First Name:  '. $rows["firstName"];
+	$rows = $results -> fetch_assoc();
+	echo 'This is the change details page for Username:  '.$rows["userName"].'<br /> First Name:  '. $rows["firstName"];
+}
 
 ?>
 
