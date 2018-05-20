@@ -95,19 +95,10 @@ body {
 
 #searchTable {
 	width: 100%;
-	text-align: center;
 }
 
 #leftColSearch {
 	width: 35%;
-}
-
-#middleColSearch {
-	width: 35%; 
-}
-
-#rightColSearch {
-	width: 30%;
 }
 
 #currButton {
