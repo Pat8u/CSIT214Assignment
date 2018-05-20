@@ -17,7 +17,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 	if($results->num_rows > 0){
 		
 		while($row = $results -> fetch_assoc()){
-			echo '<br /> Id: ' . $row["Bid"] . '<br /> Booking Date ' . $row["bookingDate"] . '<br /> additionalInfo ' . $row["additionalInfo"] . '<br />';
+			echo '<br /> Id: ' . $row["Bid"] . '<br /> Booking Date ' . $row["bookingDate"] . '<br /> additionalInfo ' . wordwrap($row["additionalInfo"],10,"\n",true) . '<br />';
 		}
 		
 		echo '<br/><a href = "/ViewOwnEvents.php">Go back</a>';

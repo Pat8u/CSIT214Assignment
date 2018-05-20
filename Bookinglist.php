@@ -35,7 +35,9 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 		$rows = array();
 		if($results -> num_rows > 0){
 			while($r = mysqli_fetch_assoc($results)){
+				$r["additionalInfo"] = wordwrap($r["additionalInfo"],10,"\n",true);
 				$rows[] = $r;
+
 			}
 		
 		$rows = json_encode($rows); 
